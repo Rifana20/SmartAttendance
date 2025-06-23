@@ -1,6 +1,3 @@
-
-
-````markdown
 # 📸 Smart Attendance System
 
 The **Smart Attendance System** is a web-based application that automates attendance marking using facial recognition. By uploading a classroom image, the system detects and recognizes faces based on a set of known student images and displays the names of those present.
@@ -9,11 +6,11 @@ The **Smart Attendance System** is a web-based application that automates attend
 
 ## 🚀 Features
 
-- 📤 Upload classroom images directly via the web interface
-- 🔍 Detect and recognize multiple faces using deep learning
-- 📋 Display recognized names in a structured table
-- ✅ Lightweight and runs locally
-- 🔁 Mark attendance from multiple images one at a time
+- 📤 Upload classroom images directly via the web interface  
+- 🔍 Detect and recognize multiple faces using deep learning  
+- 📋 Display recognized names in a structured table  
+- ✅ Lightweight and runs locally  
+- 🔁 Mark attendance from multiple images one at a time  
 
 ---
 
@@ -42,14 +39,14 @@ The **Smart Attendance System** is a web-based application that automates attend
 
 ## 📸 How It Works
 
-1. The user uploads an image via the Streamlit UI.
-2. The image is saved temporarily as `temp.jpg`.
-3. A POST request is sent to the Flask backend at `http://127.0.0.1:5000/mark`.
-4. The backend:
-   - Loads known faces from a local folder (`known_faces/`)
-   - Uses `face_recognition` to detect faces in the uploaded image
-   - Compares each face against the known encodings
-   - Returns a list of matched student names
+1. The user uploads an image via the Streamlit UI.  
+2. The image is saved temporarily as `temp.jpg`.  
+3. A POST request is sent to the Flask backend at `http://127.0.0.1:5000/mark`.  
+4. The backend:  
+   - Loads known faces from a local folder (`known_faces/`)  
+   - Uses `face_recognition` to detect faces in the uploaded image  
+   - Compares each face against known encodings  
+   - Returns a list of matched student names  
 5. The frontend displays the uploaded image and a table of recognized names.
 
 ---
@@ -61,7 +58,6 @@ The **Smart Attendance System** is a web-based application that automates attend
 ```bash
 git clone https://github.com/yourusername/smart-attendance.git
 cd smart-attendance
-````
 
 ### 2. Create Virtual Environment
 
