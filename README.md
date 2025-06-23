@@ -1,6 +1,8 @@
 # 📸 Smart Attendance System
 
 The **Smart Attendance System** is a web-based application that automates attendance marking using facial recognition. By uploading a classroom image, the system detects and recognizes faces based on a set of known student images and displays the names of those present.
+![Screenshot (829)](https://github.com/user-attachments/assets/9855089c-456f-40c0-9990-5a0f1c48dd00)
+![Screenshot (830)](https://github.com/user-attachments/assets/bb78beb7-78b0-4e8a-873e-681b605e1632)
 
 ---
 
