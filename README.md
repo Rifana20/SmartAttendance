@@ -1,5 +1,4 @@
 
----
 
 ````markdown
 # 📸 Smart Attendance System
