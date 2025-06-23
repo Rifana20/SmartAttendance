@@ -1,4 +1,3 @@
-Here's your updated **README** based strictly on your current implementation — with **only the used tech stack**, **no future features**, and written professionally:
 
 ---
 
