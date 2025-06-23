@@ -4,6 +4,10 @@ import pandas as pd
 
 st.title("📸 Smart Attendance System")
 
+# Initialize session state to keep history
+if "attendance_history" not in st.session_state:
+    st.session_state.attendance_history = []
+
 uploaded_file = st.file_uploader("Upload classroom image", type=["jpg", "png", "jpeg"])
 
 if uploaded_file is not None:
@@ -19,15 +23,22 @@ if uploaded_file is not None:
 
                 if res.status_code == 200:
                     names = res.json().get("present", [])
-                    st.success("✅ Attendance Marked")
-                    st.table(pd.DataFrame(names, columns=["Name"]))
+                    if names:
+                        st.success("✅ Attendance Marked")
+                        # Extend history with new names
+                        st.session_state.attendance_history.extend(names)
+                    else:
+                        st.warning("⚠️ No known students matched in the image.")
+                    
+                    # Remove duplicates and show as table
+                    unique_names = list(set(st.session_state.attendance_history))
+                    st.table(pd.DataFrame(unique_names, columns=["Name"]))
+
+                    st.write("Response code:", res.status_code)
+                    st.write("Response text:", res.text)
                 else:
                     st.error(f"❌ Server Error: {res.status_code}")
                     st.text(res.text)
-                
-                # ✅ Show response info only if res exists
-                st.write("Response code:", res.status_code)
-                st.write("Response text:", res.text)
 
             except Exception as e:
                 st.error("❌ Failed to connect to backend")
